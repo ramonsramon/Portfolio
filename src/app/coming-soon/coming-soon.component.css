@@ -1,0 +1,19 @@
+main {
+    background-image: url('/assets/img/sos.png');
+    min-height: 80vh;
+}
+
+.container {
+    width: 75%;
+    margin: 0 auto;
+}
+
+mat-icon {
+    width: 50%;
+}
+
+.content {
+    padding: 5rem 0;
+    text-align: center;
+    /* border: solid red 2px; */
+}

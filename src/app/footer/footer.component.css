@@ -1,0 +1,14 @@
+.footer {
+    background-image: url('/assets/img/mooning.png');
+    justify-content: center;
+    padding: 5rem 0;
+}
+
+svg {
+    color: var(--secondary-dark);
+    width: 2rem;
+}
+
+svg:hover {
+    color: var(--primary);
+}

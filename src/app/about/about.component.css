@@ -1,0 +1,114 @@
+main,
+.experience-section {
+    background-image: url('/assets/img/sos.png');
+}
+
+.container {
+    width: 75%;
+    margin: 0 auto;
+}
+
+.about {
+    /* border: solid green 2px; */
+    padding: 4rem 0
+}
+
+.about-photo {
+    max-width: 15rem;
+    height: 15rem;
+    margin: auto;
+    /* border: solid red 2px; */
+}
+
+.about-title {
+    margin-top: 1.25rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--primary)
+}
+
+.about-info {
+    margin: 1.5rem 0;
+    line-height: 2.25rem;
+}
+
+.about-photo img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.tech-title,
+.backend-title,
+.frontend-title,
+.other-title,
+.experience-title,
+.certification-title {
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--primary);
+    margin-top: 2rem;
+}
+
+h3 {
+    color: var(--primary-light);
+    margin: 0;
+}
+
+.tech-iga-skill-list,
+.backend-tech-skill-list,
+.frontend-tech-skill-list,
+.other-tech-skill-list {
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    padding: 0;
+    margin-top: 1.5rem;
+}
+
+.tech-iga-skill-list-item,
+.backend-tech-skill-list-item,
+.frontend-tech-skill-list-item,
+.other-tech-skill-list-item {
+    margin-right: .75rem;
+    margin-bottom: .75rem;
+    padding: .4rem;
+    background-color: var(--secondary);
+    border-radius: 1rem;
+}
+
+.technical-section,
+.experience {
+    padding: 2rem 0
+}
+
+mat-expansion-panel {
+    margin: 1.25rem 0;
+    min-width: 310px;
+}
+
+mat-panel-description {
+    display: none;
+}
+
+mat-expansion-panel li {
+    line-height: 2.25rem;
+}
+
+.certification-list {
+    margin-top: 2rem;
+}
+
+.certification-list-aws-sa {
+    width: 50%;
+    max-width: 165px;
+}
+
+@media(min-width: 720px) {
+    mat-panel-description {
+        display: flex;
+        justify-content: flex-end;
+    }
+}
