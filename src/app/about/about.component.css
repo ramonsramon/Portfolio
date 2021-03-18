@@ -99,16 +99,25 @@ mat-expansion-panel li {
 
 .certification-list {
     margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .certification-list-aws-sa {
     width: 50%;
     max-width: 165px;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
 }
 
 @media(min-width: 720px) {
     mat-panel-description {
         display: flex;
         justify-content: flex-end;
+    }
+
+    .certification-list {
+        justify-content: left;
     }
 }

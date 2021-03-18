@@ -1,0 +1,73 @@
+<main>
+  <div class="container">
+    <div class="content">
+      <h1>Contact Me</h1>
+      <form [formGroup]="contact" (ngSubmit)="submit()">
+        <mat-form-field>
+          <mat-label>First Name</mat-label>
+          <span matPrefix>
+            <mat-icon>perm_identity</mat-icon>
+          </span>
+          <input matInput type="text" formControlName="firstName">
+          <mat-error *ngIf="contact.get('firstName').hasError('required')">
+            First Name is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Last Name</mat-label>
+          <span matPrefix>
+            <mat-icon>perm_identity</mat-icon>
+          </span>
+          <input matInput type="text" formControlName="lastName">
+          <mat-error *ngIf="contact.get('lastName').hasError('required')">
+            Last Name is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Email Address</mat-label>
+          <span matPrefix>
+            <mat-icon>mail_outline</mat-icon>
+          </span>
+          <input matInput type="text" formControlName="email">
+          <mat-error *ngIf="contact.get('email').hasError('required')">
+            Email Address is <strong>required</strong>
+          </mat-error>
+          <mat-error *ngIf="contact.get('email').hasError('email')">
+            A valid email address is required
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Company</mat-label>
+          <span matPrefix>
+            <mat-icon>business</mat-icon>
+          </span>
+          <input matInput type="text" formControlName="company">
+          <mat-error *ngIf="contact.get('company').hasError('required')">
+            Company is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Job Role</mat-label>
+          <span matPrefix>
+            <mat-icon>work_outline</mat-icon>
+          </span>
+          <input matInput type="text" formControlName="role">
+          <mat-error *ngIf="contact.get('role').hasError('required')">
+            Job Role is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Description ({{500 - contact.get('description').value.length}}) character limit</mat-label>
+          <textarea matInput matTextareaAutosize placeholder="I need help with..." formControlName="description" maxLength="500"></textarea>
+          <mat-error *ngIf="contact.get('description').hasError('required')">
+            Description is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        <button mat-raised-button [disabled]="!contact.valid">Submit</button>
+      </form>
+      <mat-error *ngIf="contact.hasError('serverError')">
+        There was an issue with the server, please try again later
+      </mat-error>
+    </div>
+  </div>
+</main>

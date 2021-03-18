@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  lambda_url: "https://ddjcw1htkc.execute-api.us-east-1.amazonaws.com/prod/sendEmail"
 };
 
 /*

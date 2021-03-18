@@ -1,5 +1,6 @@
 main {
     background-image: url('/assets/img/sos.png');
+    height: 80vh;
 }
 
 p {
