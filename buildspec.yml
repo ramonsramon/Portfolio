@@ -1,0 +1,14 @@
+verison: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 12.x
+  post_build:
+    commands:
+      - npm install
+      - npm run build
+
+artifacts:
+  files:
+    - dist/portfolio/**/*
