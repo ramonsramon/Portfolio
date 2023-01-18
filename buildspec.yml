@@ -12,3 +12,4 @@ phases:
 artifacts:
   files:
     - dist/portfolio/**/*
+  base-directory: portfolio
