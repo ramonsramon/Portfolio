@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ContactService } from '../contact.service';
 import { LoadingService } from '../loading.service';
@@ -11,18 +11,18 @@ import { LoadingService } from '../loading.service';
 })
 export class ContactMeComponent implements OnInit {
 
-  public contact: FormGroup
+  public contact: UntypedFormGroup
 
   constructor(private contactService: ContactService, private loadingService: LoadingService, private router: Router) { }
 
   ngOnInit(): void {
-    this.contact = new FormGroup({
-      company: new FormControl('', Validators.required),
-      firstName: new FormControl('', Validators.required),
-      lastName: new FormControl('', Validators.required),
-      email: new FormControl('', [Validators.required, Validators.email]),
-      role: new FormControl('', Validators.required),
-      description: new FormControl('', [Validators.required])
+    this.contact = new UntypedFormGroup({
+      company: new UntypedFormControl('', Validators.required),
+      firstName: new UntypedFormControl('', Validators.required),
+      lastName: new UntypedFormControl('', Validators.required),
+      email: new UntypedFormControl('', [Validators.required, Validators.email]),
+      role: new UntypedFormControl('', Validators.required),
+      description: new UntypedFormControl('', [Validators.required])
     })
   }
 
