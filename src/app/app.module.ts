@@ -16,13 +16,13 @@ import { ContactMeComponent } from './contact-me/contact-me.component';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
-import { MatMenuModule } from '@angular/material/menu';
+import { MatLegacyButtonModule as MatButtonModule } from '@angular/material/legacy-button';
+import { MatLegacyMenuModule as MatMenuModule } from '@angular/material/legacy-menu';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatExpansionModule } from '@angular/material/expansion';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatLegacyFormFieldModule as MatFormFieldModule } from '@angular/material/legacy-form-field';
+import { MatLegacyInputModule as MatInputModule } from '@angular/material/legacy-input';
+import { MatLegacyProgressBarModule as MatProgressBarModule } from '@angular/material/legacy-progress-bar';
 import { ContactService } from './contact.service';
 import { LoaderComponent } from './loader/loader.component';
 import { LoadingService } from './loading.service';
