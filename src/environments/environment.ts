@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  lambda_url: "https://ddjcw1htkc.execute-api.us-east-1.amazonaws.com/prod/sendEmail"
+  lambda_url: "https://ekuje0on3a.execute-api.us-east-1.amazonaws.com/publish"
 };
 
 /*
