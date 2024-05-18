@@ -1,20 +1,22 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 @Component({
   selector: 'about',
+  standalone: true,
+  imports: [MatDividerModule, MatExpansionModule],
   templateUrl: './about.component.html',
-  styleUrls: ['./about.component.css']
+  styleUrls: ['./about.component.css'],
 })
 export class AboutComponent implements OnInit {
-  yearsOfService: string
+  yearsOfService: string;
   constructor() {
-    const startYear = 2017
-    let t = new Date()
+    const startYear = 2017;
+    let t = new Date();
 
-    this.yearsOfService = (t.getFullYear() - startYear).toString()
+    this.yearsOfService = (t.getFullYear() - startYear).toString();
   }
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

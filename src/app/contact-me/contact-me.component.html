@@ -8,66 +8,76 @@
           <span matPrefix>
             <mat-icon>perm_identity</mat-icon>
           </span>
-          <input matInput type="text" formControlName="firstName">
-          <mat-error *ngIf="contact.get('firstName').hasError('required')">
-            First Name is <strong>required</strong>
-          </mat-error>
+          <input matInput type="text" formControlName="firstName" />
+          @if (contact.get('firstName').hasError('required')) {
+          <mat-error> First Name is <strong>required</strong> </mat-error>
+          }
         </mat-form-field>
         <mat-form-field>
           <mat-label>Last Name</mat-label>
           <span matPrefix>
             <mat-icon>perm_identity</mat-icon>
           </span>
-          <input matInput type="text" formControlName="lastName">
-          <mat-error *ngIf="contact.get('lastName').hasError('required')">
-            Last Name is <strong>required</strong>
-          </mat-error>
+          <input matInput type="text" formControlName="lastName" />
+          @if (contact.get('lastName').hasError('required')) {
+          <mat-error> Last Name is <strong>required</strong> </mat-error>
+          }
         </mat-form-field>
         <mat-form-field>
           <mat-label>Email Address</mat-label>
           <span matPrefix>
             <mat-icon>mail_outline</mat-icon>
           </span>
-          <input matInput type="text" formControlName="email">
-          <mat-error *ngIf="contact.get('email').hasError('required')">
-            Email Address is <strong>required</strong>
-          </mat-error>
-          <mat-error *ngIf="contact.get('email').hasError('email')">
-            A valid email address is required
-          </mat-error>
+          <input matInput type="text" formControlName="email" />
+          @if (contact.get('email').hasError('required')) {
+          <mat-error> Email Address is <strong>required</strong> </mat-error>
+          } @if (contact.get('email').hasError('email')) {
+          <mat-error> A valid email address is required </mat-error>
+          }
         </mat-form-field>
         <mat-form-field>
           <mat-label>Company</mat-label>
           <span matPrefix>
             <mat-icon>business</mat-icon>
           </span>
-          <input matInput type="text" formControlName="company">
-          <mat-error *ngIf="contact.get('company').hasError('required')">
-            Company is <strong>required</strong>
-          </mat-error>
+          <input matInput type="text" formControlName="company" />
+          @if (contact.get('company').hasError('required')) {
+          <mat-error> Company is <strong>required</strong> </mat-error>
+          }
         </mat-form-field>
         <mat-form-field>
           <mat-label>Job Role</mat-label>
           <span matPrefix>
             <mat-icon>work_outline</mat-icon>
           </span>
-          <input matInput type="text" formControlName="role">
-          <mat-error *ngIf="contact.get('role').hasError('required')">
-            Job Role is <strong>required</strong>
-          </mat-error>
+          <input matInput type="text" formControlName="role" />
+          @if (contact.get('role').hasError('required')) {
+          <mat-error> Job Role is <strong>required</strong> </mat-error>
+          }
         </mat-form-field>
         <mat-form-field>
-          <mat-label>Description ({{500 - contact.get('description').value.length}}) character limit</mat-label>
-          <textarea matInput matTextareaAutosize placeholder="I need help with..." formControlName="description" maxLength="500"></textarea>
-          <mat-error *ngIf="contact.get('description').hasError('required')">
-            Description is <strong>required</strong>
-          </mat-error>
+          <mat-label
+            >Description ({{ 500 - contact.get("description").value.length }})
+            character limit</mat-label
+          >
+          <textarea
+            matInput
+            matTextareaAutosize
+            placeholder="I need help with..."
+            formControlName="description"
+            maxLength="500"
+          ></textarea>
+          @if (contact.get('description').hasError('required')) {
+          <mat-error> Description is <strong>required</strong> </mat-error>
+          }
         </mat-form-field>
         <button mat-raised-button [disabled]="!contact.valid">Submit</button>
       </form>
-      <mat-error *ngIf="contact.hasError('serverError')">
+      @if (contact.hasError('serverError')) {
+      <mat-error>
         There was an issue with the server, please try again later
       </mat-error>
+      }
     </div>
   </div>
 </main>
