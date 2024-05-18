@@ -4,13 +4,9 @@
 // Plus imports for other components in your app.
 
 // Include the common styles for Angular Material. We include this here so that you only
-$custom-typography: mat.define-legacy-typography-config(
-  $font-family: "Rufina, serif",
-  $headline: mat.define-typography-level(32px, 48px, 700),
-  $body-1: mat.define-typography-level(16px, 24px, 500),
-);
 // have to load a single css file for Angular Material in your app.
 // Be sure that you only ever include this mixin once!
+@include mat.core();
 // TODO(v15): As of v15 mat.legacy-core no longer includes default typography styles.
 //  The following line adds:
 //    1. Default typography styles for all components
@@ -19,12 +15,16 @@ $custom-typography: mat.define-legacy-typography-config(
 //  If you don't need the default component typographies but still want the hierarchy styles,
 //  you can delete this line and instead use:
 //    `@include mat.legacy-typography-hierarchy($custom-typography);`
-@include mat.all-legacy-component-typographies($custom-typography);
-@include mat.legacy-core();
 
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
+$portfolio-config: mat.define-typography-config(
+  $font-family: "Rufina, serif",
+  $headline-1: mat.define-typography-level(32px, 48px, 700),
+  $body-1: mat.define-typography-level(16px, 24px, 500),
+);
+
 $portfolio-primary: mat.define-palette(mat.$red-palette, 600);
 $portfolio-accent: mat.define-palette(mat.$cyan-palette, 300);
 
@@ -33,12 +33,17 @@ $portfolio-warn: mat.define-palette(mat.$orange-palette, 500);
 
 // Create the theme object (a Sass map containing all of the palettes).
 $portfolio-theme: mat.define-light-theme(
-  $portfolio-primary,
-  $portfolio-accent,
-  $portfolio-warn
+  (
+    color: (
+      primary: $portfolio-primary,
+      accent: $portfolio-accent,
+      warn: $portfolio-warn,
+    ),
+    typography: $portfolio-config,
+  )
 );
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-@include mat.all-legacy-component-themes($portfolio-theme);
+@include mat.all-component-themes($portfolio-theme);
