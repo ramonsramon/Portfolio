@@ -3,16 +3,15 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ContactService {
-
   constructor(private http: HttpClient) {}
 
   public publish(contact) {
-    return this.http.post(environment.lambda_url, contact, {
-      observe: "response",
-      responseType: "json"
-    })
+    return this.http.post(`${environment.lambda_url}/publish`, contact, {
+      observe: 'response',
+      responseType: 'json',
+    });
   }
 }
